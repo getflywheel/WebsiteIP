@@ -12,6 +12,16 @@ function setItem(key, value) {
 	window.localStorage.setItem(key, value);
 }
 
+function ipToFleet(ip) {
+  switch(ip) {
+    case "34.196.26.70":
+      return "us-east-1-0";
+    case "104.198.58.34":
+      return "us-central-1-0";
+  }
+  return ip
+}
+
 // Get the item from local storage with the specified key
 function getItem(key) {
 	var value;
@@ -61,7 +71,7 @@ chrome.extension.onMessage.addListener(
 			var currentURL = sender.tab.url;
 			if (currentIPList[currentURL] !== undefined) {
 				sendResponse({
-					domainToIP: currentIPList[currentURL]
+					domainToIP: ipToFleet(currentIPList[currentURL])
 				});
 			} else {
 				sendResponse({

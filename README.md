@@ -1,3 +1,10 @@
+C U S T O M
+===========
+
+This version of WebsiteIP is customized for Flywheel.  In addition to showing you the IP it will try to tell you if the site is hosted on a Picard cluster, and which one.
+
+----------------------------
+
 WebsiteIP
 =========
 
